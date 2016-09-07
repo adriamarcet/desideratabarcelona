@@ -1,0 +1,191 @@
+/* 
+	When adding a c-modal component
+	the markup has to follow this pattern:
+	.c-modal 
+		.c-modal__wrapper--outer
+			.c-modal__wrapper--inner
+				.c-modal__container
+					.c-modal__close-button goes here
+					.c-modal__content Here the content
+	In order to work properly. @
+
+	Markup example:
+	<div class="c-modal c-modal--close-inside-content c-modal--soft">
+		<div class="c-modal__wrapper--outer">
+			
+			<div class="c-modal__wrapper--inner">
+				
+				<div class="c-modal__container">
+					
+					<button type="button" class="c-modal__close-button" aria-label="Close (Press escape to close)"><span>Close</span></button>
+					<div class="c-modal__content h-limit-center h-align-center">
+					
+						<p><strong>Some title here:</strong> Chanante ipsum dolor sit amet, elit minim nostrud saepe saepe. Enim pero qué pelazo adipisicing nostrud gañán ea et dolore minim tontiploster nisi one more time. </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+*/
+.c-modal {	
+	* { 
+		/* Making sure all it's descendants will have the border-box model*/
+		box-sizing: border-box;
+		/* Removing outline */
+		outline: none !important;
+	}
+
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	overflow: auto;
+	opacity: 1;
+	box-sizing: border-box;
+	transition: all 0.3s ease-in-out;
+
+	// background-color: rgba(0, 0, 0, 0.42);
+	color: black;
+	
+	/* 
+		Elements start here
+	*/
+
+	&__wrapper {
+
+		&--outer {
+			display: table;
+			position: relative;
+			width: 100%;
+			height: 100%;
+		}
+
+		&--inner {
+			display: table-cell;
+			width: 100%;
+			height: 100%;
+			position: relative;
+			vertical-align: middle;
+			text-align: center;
+			padding: 80px 25px;
+		}
+	}
+	
+	&__container {
+		/* 
+			This is the holder for the content 
+			still missing to decide if some styles go here or inside .c-modal__content
+			as background color or border radius or box shadow.
+
+			For now we'll leave them here.
+		*/
+
+		position: relative;
+		display: inline-block;
+		width: 100%;
+		margin: auto;
+		text-align: left;
+		max-width: 1000px;
+		border-radius: 0px;
+
+		
+		color: inherit; /* this has to be inherit just in case we add some modifiers to the c-modal parent block */
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+		background: #fff;
+		border-radius: 5px;
+		cursor: auto;
+	}
+
+	&__close-button {
+		
+		position: fixed;
+		right: 20px;
+		top: 20px;
+		color: #fff;
+		cursor: pointer;
+		opacity: 1;
+		width: 50px;
+		height: 50px;
+		background: transparent;
+		border-radius: 100%;
+		transition: all 0.2s ease-in-out;
+
+		/* Making sure it has no style applied (button or input tags has them) */
+		border: none;
+		background: transparent;
+		padding: 0;
+		-webkit-appearance: none;
+
+		
+		span {
+			/* Making the word 'close' disapear, but we need it there for progressive enhancement / semantic reasons */
+			position: absolute !important;
+			clip: rect(1px 1px 1px 1px);
+			clip: rect(1px, 1px, 1px, 1px);
+			padding: 0 !important;
+			border: 0 !important;
+			height: 1px !important;
+			width: 1px !important;
+			overflow: hidden;
+		}
+		/* Creating the sticks for the button here */
+		&:before,
+		&:after {
+			display: block;
+			content: " ";
+			position: absolute;
+			top: 14px;
+			left: 23px;
+			width: 2px;
+			height: 22px;
+			border-radius: 4px;
+			background: #fff;
+			transition: background 0.2s ease-in-out;
+		}
+
+		/* Creating the X shape here */
+		&:before 	{	transform: rotate(-45deg);	}
+		&:after 	{	transform: rotate(45deg);	}
+	}
+	
+	&__content {
+		/* The actual content will be dispayed inside this container class */
+
+		width: 100%;
+		padding: $baseline;
+	}
+
+	/* 
+		Modifiers start here 
+	*/
+
+	&--close-inside-content	{
+		
+		.c-modal__close-button {
+			position: absolute;
+
+			right: 0;
+			top: 0;
+
+			&:before, 
+			&:after {
+				background-color: black; /* Color can't be white as its container */
+			}
+		}
+
+		.c-modal__content {
+			padding-top: $baseline + 50px; /* The initial padding plus the height of __close-button element */
+		}
+	}
+
+	&--soft {
+		
+		color: gray;
+
+		&__content {
+		}
+	}
+}
