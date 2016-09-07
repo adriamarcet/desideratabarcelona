@@ -892,3 +892,20 @@ function boilerplate_credits() {
 /**
 * END TLD scripts
 */
+
+
+
+// Loading styles here
+	add_action( 'wp_enqueue_scripts', 'enqueue_my_styles' );
+	/*
+		* Example callback function that demonstrates how to properly enqueue conditional stylesheets in WordPress for IE.
+		* IE10 and up does not support conditional comments in standards mode.
+		*
+		* @uses wp_style_add_data() WordPress function to add the conditional data.
+		* @link https://developer.wordpress.org/reference/functions/wp_style_add_data/
+		* @link https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx
+	*/
+	function enqueue_my_styles() {
+		// Load the main stylesheet
+		wp_enqueue_style( 'styles-main', get_stylesheet_directory_uri(). "/css/styles.css" );
+	}
