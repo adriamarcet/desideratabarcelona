@@ -1,0 +1,20 @@
+.c-header {
+
+	background-color: $gray--corporate;
+	text-align: center;
+
+	#masthead {
+
+		margin-top: 0;
+		padding: $baseline*2 0;
+		background: url("http://api.thumbr.it/whitenoise-361x370.png?background=33384aff&noise=646d8a&density=46&opacity=18");
+	}
+
+	a[rel="home"] {
+		@include fontSizeRem(40);
+		color: white;
+		text-align: center;
+		text-decoration: none;
+
+	}
+}

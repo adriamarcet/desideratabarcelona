@@ -1,0 +1,16 @@
+.c-tip {
+	@extend .margins-off;
+	
+	background-color: $gray--corporate;
+	border-bottom: 1px solid $cream;
+	padding: 0 $baseline/2 $baseline/2;
+	margin-top: 0;
+
+	* {
+		@include fontSizeRem(10);
+		line-height: 1.1;
+		text-transform: uppercase;
+		font-family: $font-family--sans;
+		color: $cream;
+	}
+}

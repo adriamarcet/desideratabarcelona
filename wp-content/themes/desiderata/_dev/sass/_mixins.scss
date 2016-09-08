@@ -76,3 +76,10 @@
 		transform: translateX(-50%);
 	}
 }
+
+
+// Controlling font sizes here
+@mixin fontSizeRem($f){
+	
+	font-size: #{($f/16)}rem;	
+}

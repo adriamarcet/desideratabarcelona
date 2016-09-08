@@ -18,12 +18,12 @@
 */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 /**
- * 1. Set default font family to sans-serif.
+ * 1. Set default font family to serif.
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
 html {
-  font-family: sans-serif;
+  font-family: serif;
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */
@@ -139,7 +139,6 @@ dfn {
  */
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
 }
 
 /**
@@ -419,7 +418,7 @@ th {
    Base styles: opinionated defaults
    ========================================================================== */
 html {
-  color: #222;
+  color: #2d2828;
   font-size: 1em;
   line-height: 1.4;
 }
@@ -624,26 +623,34 @@ li#theme-switcher {
 
 /** Keep drop-downs working **/
 #access li {
+  /*
   float: left;
   position: relative;
+  */
 }
 
 #access ul ul {
+  /*
   display: none;
   float: left;
   position: absolute;
   top: 3.333em;
   left: 0;
   z-index: 99999;
+  */
 }
 
 #access ul ul ul {
+  /*
   left: 100%;
   top: 0;
+  */
 }
 
 #access ul li:hover > ul {
+  /*
   display: block;
+  */
 }
 
 /** END WordPress-Defined CSS Classes **/
@@ -731,10 +738,6 @@ li#theme-switcher {
     border: none;
   }
 }
-* {
-  font-family: Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
-}
-
 /* Font stack options FROM HTML5 BOILERPLATE
 
 	The following represents a list of font stacks, as recommended by Nathan Ford in
@@ -802,11 +805,60 @@ Verdana, Tahoma, Geneva, sans-serif - t
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+* + * {
+  margin-top: 24px;
+}
+
+main[role="main"] {
+  margin-top: 0;
+}
+
+.margins-off > *, .c-tip > * {
+  margin-top: 0;
+}
+
+article {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  background-color: #f9f1db;
+  padding: 24px 12px;
+}
+article h2 {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #33384a;
+}
+
+@media screen and (min-width: 640px) {
+  article {
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+}
+h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
+  margin-top: 0;
+  padding-top: 24px;
+  border-top: 1px solid gainsboro;
+  transition: all .2s ease;
+}
+h1 + p:hover, h2 + p:hover, h3 + p:hover, h4 + p:hover, h5 + p:hover, h6 + p:hover {
+  border-top: 1px solid orange;
+}
+
+p + p {
+  margin-top: 12px;
 }
 
 h1, h2, h3, h4, h5, h6, p, span, em, hr, br {
   display: block;
-  margin: 0;
   padding: 0;
 }
 
@@ -1255,7 +1307,7 @@ textarea {
 .c-modal__content {
   /* The actual content will be dispayed inside this container class */
   width: 100%;
-  padding: 20px;
+  padding: 24px;
 }
 .c-modal--close-inside-content .c-modal__close-button {
   position: absolute;
@@ -1267,11 +1319,41 @@ textarea {
   /* Color can't be white as its container */
 }
 .c-modal--close-inside-content .c-modal__content {
-  padding-top: 70px;
+  padding-top: 74px;
   /* The initial padding plus the height of __close-button element */
 }
 .c-modal--soft {
   color: gray;
+}
+
+.c-header {
+  background-color: #33384a;
+  text-align: center;
+}
+.c-header #masthead {
+  margin-top: 0;
+  padding: 48px 0;
+  background: url("http://api.thumbr.it/whitenoise-361x370.png?background=33384aff&noise=646d8a&density=46&opacity=18");
+}
+.c-header a[rel="home"] {
+  font-size: 2.5rem;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+.c-tip {
+  background-color: #33384a;
+  border-bottom: 1px solid #f9f1db;
+  padding: 0 12px 12px;
+  margin-top: 0;
+}
+.c-tip * {
+  font-size: 0.625rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #f9f1db;
 }
 
 #wpadminbar {

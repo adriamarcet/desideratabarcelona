@@ -17,13 +17,13 @@
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 
 /**
- * 1. Set default font family to sans-serif.
+ * 1. Set default font family to serif.
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
 
 html {
-    font-family: sans-serif; /* 1 */
+    font-family: serif; /* 1 */
     -ms-text-size-adjust: 100%; /* 2 */
     -webkit-text-size-adjust: 100%; /* 2 */
 }
@@ -148,7 +148,6 @@ dfn {
 
 h1 {
     font-size: 2em;
-    margin: 0.67em 0;
 }
 
 /**
@@ -454,7 +453,7 @@ th {
    ========================================================================== */
 
 html {
-    color: #222;
+    color: #2d2828;
     font-size: 1em;
     line-height: 1.4;
 }
@@ -663,23 +662,31 @@ li#theme-switcher { background:#fff; border:10px solid red; padding:20px; positi
 .bypostauthor{}
 /** Keep drop-downs working **/
 #access li {
+    /*
     float: left;
     position: relative;
+    */
 }
 #access ul ul {
+    /*
     display: none;
     float: left;
     position: absolute;
     top: 3.333em;
     left: 0;
     z-index: 99999;
+    */
 }
 #access ul ul ul {
+    /*
     left: 100%;
     top: 0;
+    */
 }
 #access ul li:hover > ul {
+    /*
     display: block;
+    */
 }
 
 /** END WordPress-Defined CSS Classes **/

@@ -35,7 +35,10 @@
 	</head>
 	<body <?php body_class(); ?>>
 	<?php ie_browse_happy(); ?>
-		<div id="header">
+		<div class="c-header">
+			<div class="c-tip c-tip__starred">
+				<strong>Espacio para promociones específicas aquí. Será un tipo de post diferente.</strong>
+			</div>
 			<div id="masthead">
 				<div id="branding" role="banner">
 					<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
