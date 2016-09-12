@@ -5,6 +5,7 @@
 @import "boilerplate-reset.scss";
 
 @import "fonts.scss";
+@import "layout.scss";
 @import "globals.scss";
 @import "helpers.scss";
 
@@ -13,9 +14,10 @@
 @import "components/group.scss";
 @import "components/c-modal.scss";
 @import "components/c-header.scss";
+@import "components/c-menu.scss";
 @import "components/c-tip.scss";
-
-
+@import "components/c-gallery.scss";
 
 @import "zindex.scss";
+@import "zimg.scss";
 @import "end.scss";

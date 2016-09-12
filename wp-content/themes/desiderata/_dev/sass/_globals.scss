@@ -13,6 +13,7 @@ img {
 * + * {
 	margin-top: $baseline;
 }
+
 main[role="main"] {
 
 	margin-top: 0;
@@ -22,37 +23,41 @@ main[role="main"] {
 	margin-top: 0;
 }
 
+body {
+	position: relative;
+}
+
+body:after {
+
+	display: block;
+	content: "";
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	background-color: rgba(249, 241, 219, 0.36);
+
+}
 
 article {
 
 	@include fontSizeRem(14);
 	line-height: 1.6;
-	background-color: $cream;
 	padding: $baseline $baseline/2;
-
+	margin-top: 0;
+	
 	h2 {
-		@include fontSizeRem(18);
+	// 	@include fontSizeRem(18);
 		font-weight: bold;
 		color: $gray--corporate;
 	}
 }
 
-@media screen and (min-width: 640px) {
-	article {
-
-		@include fontSizeRem(18);
-		line-height: 1.6;
-		
-	}
-
-}
 
 h1,h2,h3,h4,h5,h6 {
 
 	& + p {
 		margin-top: 0;
 		padding-top: $baseline;
-		border-top: 1px solid gainsboro;
+		border-top: 1px solid orange;
 		
 		transition: all .2s ease;
 
@@ -91,5 +96,27 @@ ol {
 			content:counter(li); /* Use the counter as content */
 			counter-increment:li; /* Increment the counter by 1 */
 		}
+	}
+}
+
+
+
+@media screen and (min-width: $tablet) {
+	
+	article {
+		padding: $baseline*2 0;
+	}
+}
+
+
+
+@media screen and (min-width: $desktop) {
+	
+	article {
+
+		@include fontSizeRem(18);
+		line-height: 1.6;
+		max-width: $desktop;
+		margin: 0 auto;
 	}
 }

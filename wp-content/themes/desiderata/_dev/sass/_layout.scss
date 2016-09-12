@@ -1,0 +1,58 @@
+.group {
+
+	@include cf;
+
+	[class*="col-"] {
+		display: block;
+		float: left;
+		margin-top: 0;
+	}
+
+	.col-unit {
+
+	}
+
+	.col-1-4 {
+		width: (1/4) * 100%;
+	}
+}
+
+
+@media screen and (min-width: $tablet ) {
+	
+	.group {
+
+		&--pad {
+			
+			padding-left: $baseline;
+			
+			[class*="col-"] {
+				padding-right: $baseline;
+			}
+		}
+
+	
+		.col-1-2--tablet {
+			width: (1/2) * 100%;
+		}
+
+		.col-1-4--tablet {
+			width: (1/4) * 100%;
+		}
+	}
+}
+
+
+@media screen and (min-width: $desktop ) {
+	
+	.group {
+		
+		.col-1-2--desktop {
+			width: (1/2) * 100%;
+		}
+
+		.col-1-4--desktop {
+			width: (1/4) * 100%;
+		}
+	}
+}

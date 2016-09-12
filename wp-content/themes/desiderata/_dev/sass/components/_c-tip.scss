@@ -2,15 +2,20 @@
 	@extend .margins-off;
 	
 	background-color: $gray--corporate;
-	border-bottom: 1px solid $cream;
-	padding: 0 $baseline/2 $baseline/2;
-	margin-top: 0;
+	margin-top: 2px;
+	padding-top: 6px;
+	line-height: 1;
 
 	* {
 		@include fontSizeRem(10);
-		line-height: 1.1;
+		
+		line-height: 1;
 		text-transform: uppercase;
 		font-family: $font-family--sans;
 		color: $cream;
+
+		display: inline-block;
+		vertical-align: bottom;
+		padding-bottom: 6px;
 	}
 }

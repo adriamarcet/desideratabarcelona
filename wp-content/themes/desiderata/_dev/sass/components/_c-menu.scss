@@ -1,0 +1,71 @@
+.menu,
+.c-menu {
+	
+	ul {
+		@extend .list--row;
+		line-height: 1;
+		background-color:rgba(0,0,0,.050);
+
+		&:after {
+
+			content: "";
+			display: block;
+			height: 2px;
+			width: 100%;
+			background: $gray--corporate;
+		}
+
+		li {
+			margin: 0;
+			line-height: inherit;
+			display: inline-block;
+
+			a {
+				transition: all .2s ease-in-out;
+				text-decoration: none;
+				line-height: inherit;
+				color: $gray--corporate;
+				@include fontSizeRem(14);
+				color: $gray--corporate;
+				display: block;
+				padding: $baseline/2;
+				
+				&:hover {
+					color: orange;
+				}
+			}
+		}
+	}
+
+	&__main {
+
+	}
+}
+
+@media screen and (min-width: $tablet) {
+
+	.menu {
+		
+		ul {
+
+			background-color: transparent;
+		}
+	}
+}
+
+
+@media screen and (min-width: $desktop) {
+
+	.menu {
+		
+		ul {
+			width: $desktop;
+			margin: 0 auto;
+
+			&:after {
+
+				height: 1px;
+			}
+		}
+	}
+}

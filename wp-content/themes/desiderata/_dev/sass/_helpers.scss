@@ -74,10 +74,21 @@
 	}
 }
 
+.list--float-row {
+  @include cf;
+
+  & > * {
+
+    display: block;
+    float: left;
+    margin-top:0;
+  }
+}
+
 .list--row {
-    & > * {
-        display: inline-block;
-    }
+  & > * {
+      display: inline-block;
+  }
 }
 
 /* Li counter with style trick @http://goo.gl/vW9Jxj */

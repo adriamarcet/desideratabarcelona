@@ -1,0 +1,14 @@
+// Styling the Gallery markup output by Wordpress
+.gallery {
+	@extend .list--float-row;
+	
+
+	a {
+		display: block;
+
+		img {
+
+			display: block;
+		}
+	}
+}
