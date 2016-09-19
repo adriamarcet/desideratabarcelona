@@ -1,0 +1,17 @@
+@media screen and (min-width: $tablet) {
+
+	.c-starred-content {
+
+		display: block;
+		padding: $baseline 0 2px;
+		background-color: rgba(0,0,0,.050);
+	}
+}	
+
+
+@media screen and (min-width: $desktop) {
+
+	.c-starred-content {
+		padding: $baseline 0;
+	}
+}	

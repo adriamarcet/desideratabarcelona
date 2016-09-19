@@ -10,6 +10,11 @@ img {
 	max-width: 100%;
 }
 
+.here {
+	fill: orange;
+	 stroke-width: 1;
+} 
+
 * + * {
 	margin-top: $baseline;
 }
@@ -17,6 +22,12 @@ img {
 main[role="main"] {
 
 	margin-top: 0;
+
+	& > article.hentry {
+
+		background-color: rgba(255, 255, 255, 0.6);
+		margin: 0 $baseline;
+	}
 }
 
 .margins-off > * {
@@ -33,15 +44,17 @@ body:after {
 	content: "";
 	position: absolute;
 	top: 0; right: 0; bottom: 0; left: 0;
+	background-color: rgba(216, 212, 200, 0.31);
+	
 	background-color: rgba(249, 241, 219, 0.36);
-
+	background-color: rgba(255, 253, 247, 0.36);
 }
 
 article {
 
 	@include fontSizeRem(14);
 	line-height: 1.6;
-	padding: $baseline $baseline/2;
+	// padding: $baseline $baseline/2;
 	margin-top: 0;
 	
 	h2 {
@@ -104,7 +117,7 @@ ol {
 @media screen and (min-width: $tablet) {
 	
 	article {
-		padding: $baseline*2 0;
+	// padding: $baseline*2 0;
 	}
 }
 
@@ -118,5 +131,19 @@ ol {
 		line-height: 1.6;
 		max-width: $desktop;
 		margin: 0 auto;
+	}
+
+	main[role="main"] {
+
+		& > article.hentry {
+			margin: 0 auto;
+
+			p:first-child {
+
+				padding: $baseline*5 $baseline*4 $baseline*5;
+				text-align: center;
+				line-height: 1.8;
+			}
+		}
 	}
 }

@@ -14,37 +14,64 @@
 			width: 100%;
 			background: $gray--corporate;
 		}
-
-		li {
-			margin: 0;
-			line-height: inherit;
-			display: inline-block;
-
-			a {
-				transition: all .2s ease-in-out;
-				text-decoration: none;
-				line-height: inherit;
-				color: $gray--corporate;
-				@include fontSizeRem(14);
-				color: $gray--corporate;
-				display: block;
-				padding: $baseline/2;
-				
-				&:hover {
-					color: orange;
-				}
-			}
-		}
 	}
 
-	&__main {
+	li {
+		margin: 0;
+		line-height: inherit;
+		display: inline-block;
+	}
 
+	a {
+		transition: all .2s ease-in-out;
+		text-decoration: none;
+		line-height: inherit;
+		color: $gray--corporate;
+		@include fontSizeRem(14);
+		color: $gray--corporate;
+		display: block;
+		padding: $baseline/2;
+		
+
+		position: relative;
+
+		&:after {
+
+
+			transition: all .2s ease-in-out;
+
+			// border: 1px solid $gray--corporate;
+			// border-color: inherit;
+			display: inline-block;
+			content: "";
+
+			position: absolute;
+
+			background-color: $gray--corporate;
+			width: 4px;
+			height: 4px;
+			border-radius: 100%;
+
+			left: 0%;
+			top: 50%;
+			transform: translateY(-50%) translateX(-50%);
+
+		}
+
+		&:hover {
+			color: orange;
+
+			&:after {
+				background-color: orange;
+			}
+		}
 	}
 }
 
 @media screen and (min-width: $tablet) {
 
-	.menu {
+	.menu,
+	.c-menu {
 		
 		ul {
 
@@ -56,15 +83,25 @@
 
 @media screen and (min-width: $desktop) {
 
-	.menu {
+	.menu,
+	.c-menu {
 		
 		ul {
 			width: $desktop;
 			margin: 0 auto;
 
 			&:after {
+				display: none;
+			}
+		}
 
-				height: 1px;
+		a {
+			&:hover {
+
+				&:after {
+					width: $baseline/2;
+					height: $baseline/2;
+				}
 			}
 		}
 	}

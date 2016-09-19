@@ -31,8 +31,11 @@
 @media screen and (min-width: $tablet) {
 
 	.c-header {
+		
+		& ~ * {
 
-		padding-bottom: 2px;
+			margin-top: 0;
+		}
 	}
 }
 
@@ -40,6 +43,6 @@
 
 	.c-header {
 
-		padding-bottom: $baseline*2;
+		padding-bottom: $baseline;
 	}
 }
