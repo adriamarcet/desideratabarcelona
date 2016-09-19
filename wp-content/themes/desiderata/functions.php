@@ -895,6 +895,15 @@ function boilerplate_credits() {
 
 
 
+// Remove br from wp galleries
+// refernce @ https://gist.github.com/kmmathis/4278217
+
+add_filter( 'the_content', 'remove_br_gallery', 11, 2);
+function remove_br_gallery($output) {
+	return preg_replace('/<br style=(.*)>/mi','',$output);
+}
+
+
 // Loading styles here
 	add_action( 'wp_enqueue_scripts', 'enqueue_my_styles' );
 	/*

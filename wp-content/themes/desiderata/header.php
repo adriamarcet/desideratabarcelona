@@ -35,12 +35,22 @@
 	</head>
 	<body <?php body_class(); ?>>
 	<?php ie_browse_happy(); ?>
+		
 		<div class="c-header">
 			<div class="c-tip c-tip__starred">
 				<strong>Espacio para promociones específicas aquí. Será un tipo de post diferente.</strong>
 			</div>
 			<div id="masthead">
 				<div id="branding" role="banner">
+					
+					<!--
+					<?php include_once("svgs/svg-defs.svg"); ?>
+					<svg viewBox="0 0 100 100" class="icon shape-codepen">
+					  <use xlink:href="#icn-logo"></use>
+					</svg>
+					-->
+					<img src="<?php echo bloginfo( 'template_directory' ) ?>/images/logo--icon.png">
+
 					<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
 					<<?php echo $heading_tag; ?> id="site-title">
 						<span>
